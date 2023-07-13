@@ -1,0 +1,67 @@
+[13/07, 08:44] Balaa Bhai: import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Main
+{
+    public static void main (String[] args)
+    {
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Enter the number: ");
+         int num = sc.nextInt();
+         
+         int lastDigit = num%10;
+         
+         System.out.println("The last Digit of the Number is "+lastDigit);
+    }
+}
+[13/07, 08:44] Balaa Bhai: public class Main{
+    public static void main(String[] args){
+        int a = 120025;
+        int secondLastDigit = (a % 100) / 10;
+        System.out.println(secondLastDigit);
+        secondLastDigit = (a / 10) % 10;
+        System.out.println(secondLastDigit);
+    }
+}
+[13/07, 08:44] Balaa Bhai: import java.io.*;
+import  java.util.*;
+
+// Read only region start
+class UserMainCode
+{
+
+    public int addLastDigits(int input1,int input2){
+        // Read only region end
+        int sum=0;
+
+        if((input1<10&&input1>0)&&(input2<10&&input2>0))
+            sum=input1+input2;
+        else if(input1<0&&input2<0)
+        {
+            input1=0-input1;
+            input2=0-input2;
+            input1=input1%10;
+            input2=input2%10;
+             sum=input1+input2;
+        }
+        else if(input1<0||input2<0)
+        {
+            input1=input1%10;
+            input2=input2%10;
+             sum=input1-input2;
+            sum=sum%10;
+        }
+        else
+        {
+            while((input1 >10)||(input2 >10))
+            {
+              input1=input1%10;
+              input2=input2%10;
+              sum=input1+input2;
+            }
+        }
+
+        System.out.print(sum);
+        return sum;
+    }
+}
